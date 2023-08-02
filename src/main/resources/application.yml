@@ -1,0 +1,25 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://springdockerpostgresql:5432/sample
+#    username: sample
+#    password: sample
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      ddl-auto: update
+
+
+
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://springdockerpostgresql:5432/sample
+    username: sample
+    password: sample
+    driverClassName: org.postgresql.Driver

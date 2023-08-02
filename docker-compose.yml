@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  springdocker:
+    volumes:
+      - ./apps:/apps
+    networks:
+      simplenet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+  postgresql:
+    environment:
+      POSTGRES_USER: 'sample'
+      POSTGRES_PASSWORD: 'sample'
+      POSTGRES_DB: 'sample'
+    restart: always
+    networks:
+      simplenet:
+    image: postgres:14.5
+    container_name: springdockerpostgresql
+    ports:
+      - 5433:5432
+
+networks:
+  simplenet:
